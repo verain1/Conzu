@@ -1,7 +1,16 @@
 from bs4 import BeautifulSoup
 import requests
-from gtrends.gtrends import get_top_keywords
+from pytrends.request import TrendReq
 import pandas as pd
+
+
+pytrend = TrendReq()
+
+def get_top_keywords(country_name):
+    trending = pytrend.trending_searches(pn=country_name)
+    return list(trending[0])
+
+
 
 news_site_url = 'https://www.ndtv.com'
 
@@ -30,12 +39,12 @@ for result in html_content:
         #print(article.text)
         link = article.find('a',href=True)['href']
         title = article.find('a',title=True)['title']
-        data.append({'text':article.text,'link':link})
+        data.append({'source':'NDTV','link':link,'title':title})
 
 df = pd.DataFrame(data)
 
-def get_data(as_df=False):
+def get_ndtv_data(as_df=False):
     if as_df:
         return df
     return data
-print(get_data(as_df=True))
+#print(get_data(as_df=True))

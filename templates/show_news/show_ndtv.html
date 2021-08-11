@@ -8,7 +8,8 @@
             <ul>
             {% for dpoint in data %}
                 <li>
-                    <a href={{dpoint.link}}>{{dpoint.text}}</a>
+                    <a href={{dpoint.link}}>{{dpoint.title}}</a>
+                    {{dpoint.source}}
                 </li>
             {% endfor %}
             </ul>
