@@ -1,0 +1,17 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Showing news</title>
+    </head>
+    <body>
+        {% if data %}
+            <ul>
+            {% for dpoint in data %}
+                <li>
+                    <a href={{dpoint.link}}>{{dpoint.text}}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>
