@@ -16,4 +16,4 @@ def show_news(request):
     data1 = get_ndtv_data() 
     data2 = get_toi_data()
     data = data1 + data2 
-    return render(request,'show_news/show_ndtv.html',{"data":data})
+    return render(request,'show_news/show_news.html',{"data":data})
