@@ -9,7 +9,7 @@ headers  ={"user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KH
 
 
 pytrend = TrendReq()
-
+print('running hindustan times scraper')
 def get_top_keywords(country_name):
     trending = pytrend.trending_searches(pn=country_name)
     return list(trending[0])
@@ -21,10 +21,10 @@ trending_keywords = get_top_keywords('india')
 
 data = []
 for kw in trending_keywords:
-   # print(kw)
+    print(kw)
     url = news_site_url + '/search?q=' +kw
     response = requests.get(url,headers=headers)
-  #  print(response)
+    print(response)
     soup = BeautifulSoup(response.content,'lxml')
     try:
         result = soup.find_all('div',class_='cartHolder page-view-candidate listView')[:3]
@@ -37,7 +37,7 @@ for kw in trending_keywords:
         title = each.find('h2')
         title = title.text
         link = a_tag['href']
-        data.append({'title':title,'source':'Times Of India','link':news_site_url+'/'+link})
+        data.append({'title':title,'source':'Times Of India','link':news_site_url+'/'+link,})
 
 
 
