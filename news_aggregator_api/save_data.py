@@ -11,6 +11,4 @@ data = data1 + data2 + data3
 
 data = pd.DataFrame(data)
 os.system('cd ..')
-data.to_csv('articles.csv')
-
-
+data.to_csv('C:/news_1/news_aggregator/articles.csv')
