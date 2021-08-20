@@ -1,35 +1,119 @@
-
+{% load static %}
 
 <!DOCTYPE <!DOCTYPE html>
 <html lang='en'>
     <head>
-        <title>Showing news</title>
+        <title>Showing news</title>        
         
+        <!--
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+-->
+        <style>
+            ul {
+                list-style-type: none;
+            }
+              
+              p {
+                line-height: 1.4;
+              }
+              
+              a {
+                outline: none;
+                text-decoration: none;
+                padding: 2px 1px 0;
+              }
+              
+              a:link {
+                color: #265301;
+              }
+              
+              a:visited {
+                color: #437A16;
+              }
+              
+              a:focus {
+                border-bottom: 1px solid;
+                background: #BAE498;
+              }
+              
+              a:hover {
+                border-bottom: 1px solid;
+                background: #CDFEAA;
+              }
+              
+              a:active {
+                background: #265301;
+                color: #CDFEAA;
+              }
+
+              @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+              body {
+                margin: 0px;
+              }
+              .topnav {
+                background-color: #333;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+              }
+
+
+              /* Style the links inside the navigation bar */
+              .topnav a {
+                float: right;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 16.3px 25px;
+                text-decoration: none;
+                text-transform: capitalize;
+
+                font-size: 17px;
+                font-family: 'poppins', sans-serif;
+              }
+
+              /* Change the color of links on hover */
+              .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+              }
+
+              /* Add a color to the active/current link */
+              .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+              }
+        </style>
     </head>
     <body>
+      <div class="topnav">
+        <!--<a class="heading" href="#" >News-Wati</a>-->
+        <img src="https://i.ibb.co/wQpMnwR/logo.png" alt="logo" height = 52.5cm>
+        <a class="headings" href="#about">About Us</a>
+        <a class="headings" href="#news">News</a>
+        
+      </div>
+
         <div class="container">
             {% if data %}
                 <ul>
-                {% for dpoint in data %}
-                    <div class="row">
-                        <div class="col">
-                            <li>
-                                <a href={{dpoint.link}}>{{dpoint.title}}</a>
-                                {{dpoint.source}}
-                            </li>
-                        </div>
 
-                        
-                    </div>
-                    
+                {% for dpoint in data %}
+                        <li>
+                            <a href={{dpoint.link}}>{{dpoint.title}}</a>
+                            {{dpoint.source}}
+                        </li>                
                 {% endfor %}
                 </ul>
+
+            </div>
             {% endif %}
 
         </div>
+        <!---
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-
+-->
     </body>
 </html>

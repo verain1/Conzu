@@ -7,6 +7,5 @@ from news_aggregator_api.get_articles import articles_from_csv
 
 def show_news(request):
     data = articles_from_csv(filtered=True) # to be fixed
-    print(data)
     print(type(data))
     return render(request,'show_news/show_news.html',{"data":data})

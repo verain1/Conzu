@@ -23,14 +23,15 @@ html_content = []
 
 for kw in todays_keywords:
     print(kw)
-    url = news_site_url + '/search?searchtext='+kw
+    url = news_site_url + '/search?searchtext=' + kw
     response = requests.get(url)
     print(response)
     soup = BeautifulSoup(response.content,'lxml')
     try:
         results = soup.find('ul',class_='src_lst-ul').find_all('li')[:3]
-        html_content.append(results)
     except:
+        print(f"Exception here: {kw}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        
         pass
     
 data = []
@@ -42,6 +43,7 @@ for result in html_content:
         data.append({'title':title,'source':'NDTV','link':link,})
 
 df = pd.DataFrame(data)
+print(df)
 
 def get_ndtv_data(as_df=False):
     if as_df:
