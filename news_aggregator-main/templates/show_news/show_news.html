@@ -60,15 +60,42 @@
                 overflow: hidden;
                 margin: 0;
                 padding: 0;
-                position: fixed;
+                position:absolute;
                 top: 0;
                 width: 100%;
               }
 
+              .topnav .items {
+                float: right;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 16.3px 15px;
+                text-decoration: none;
+                font-size: 17px;
+                font-family: sans-serif;
+              }
+              
+              /* Change the color of links on hover */
+              .topnav .items:hover {
+                background-color: #ddd;
+                color: black;
+              }
+              
+              /* Add a color to the active/current link */
+              .topnav .items.active {
+                background-color: #04AA6D;
+                color: white;
+              }
+
               .topnav .headings{
-                position: fixed;
-                top: 0;
-                right: 0;
+                float: right;
+                background-color: #ddd;
+                color: black;
+                text-align: center;
+                padding: 16.4px 20px;
+                text-decoration: none;
+                font-size: 17px;
+                font-family: 'poppins', sans-serif;
               }
 
 
@@ -89,7 +116,7 @@
               top: 1.4cm;
               display: grid;
               width: 50rem;
-              grid-gap: 20rem;
+              grid-gap: 15rem;
               grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
               align-items: start;
             }
@@ -98,7 +125,9 @@
               background-color: beige;
               border-radius: 0.4rem;
               overflow: hidden;
-              
+              outline: black;
+              outline-style: solid;
+              align-items: center;
               cursor: pointer;
               transition: 0.2s;
               height: fit-content;
@@ -179,8 +208,8 @@
       <div class="topnav">
         <!--<a class="heading" href="#" >News-Wati</a>-->
         <img src="https://i.ibb.co/wQpMnwR/logo.png" alt="logo" height = 52.5cm>
-        <a class="headings" href="#about">About Us</a>
-        <a class="headings" href="#news">News</a>
+        <a class="items" href="#about">About Us</a>
+        <a class="items" href="#news">News</a>
         
       </div>
 
@@ -193,8 +222,8 @@
                 <img class="card-img" src="https://english.cdn.zeenews.com/sites/default/files/2021/08/21/962885-joe-biden-on-afghanistan-taliban-crisis.jpg" alt="CaramelOreo" />
                 <div class="card-content">
                     <p class="card-text">
-                    <a href = "#">{{dpoint.title}}</a>
-                    <strong>{{ dpoint.source }}</strong>
+                    <a href = "#">{{dpoint.title}}</a><br>
+                    <strong>Source: {{ dpoint.source }}</strong>
                     <br>
                     <a class = card-btn href={{dpoint.link}}>Read More</a>
                     </p>
