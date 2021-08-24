@@ -17,14 +17,14 @@
 
         
       {% if data %}
-            <ul>
+            
             {% for dpoint in data %}
-                <li>
+            
                     <a href={{dpoint.link}}>{{dpoint.title}}</a>
-                    {{dpoint.source}}
-                </li>
+                    <h2>{{dpoint.source}}</h2>
+            
             {% endfor %}
-            </ul>
+            
         {% endif %}      
       
     </body>
