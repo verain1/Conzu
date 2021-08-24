@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Profile Card Hover Effect</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  
+  <style>
+    .container {
+      height: 100vh;
+      width: 100vw;
+      max-height: 800px;
+      max-width: 1280px;
+      min-height: 600px;
+      min-width: 1000px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+    }
+    
+    .topnav {
+      background-color: #333;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      position:absolute;
+      top: 0;
+      width: 100%;
+    }
+    
+    .topnav .items {
+      float: right;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 16.3px 15px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: sans-serif;
+    }
+    
+    /* Change the color of links on hover */
+    .topnav .items:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    /* Add a color to the active/current link */
+    .topnav .items.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    .image{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .topnav .headings{
+      float: right;
+      background-color: #ddd;
+      color: black;
+      text-align: center;
+      padding: 16.4px 20px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: 'poppins', sans-serif;
+    }
+    
+    h2{
+      font-size: large;
+      position: absolute;
+    
+    }
+    .border {
+      height: 369px;
+      width: 290px;
+      background: transparent;
+      border-radius: 10px;
+      transition: border 1s;
+      position: relative;
+    }
+    .border:hover {
+      border: 1px solid #fff;
+    }
+    .card {
+      height: 379px;
+      width: 300px;
+      background: #808080;
+      border-radius: 10px;
+      transition: background 0.8s;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 70px 63px -60px #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    
+    a{
+      text-decoration-line: none;
+      color: black;
+    }
+    .card0 {
+      background: url("https://i.ibb.co/cxyZcPt/21172245-Acp-KQXc8.jpg") center center no-repeat;
+      background-size: cover;
+      background-size: 400px;
+    }
+    .card0:hover {
+      background: url("https://i.ibb.co/cxyZcPt/21172245-Acp-KQXc8.jpg") left center no-repeat;
+      background-size: cover;
+      background-size: 450px;
+    }
+    .card0:hover h2 {
+      opacity: 1;
+    }
+    .card1:hover h3 {
+      opacity: 1;
+    }
+    .card0:hover .fa {
+      opacity: 1;
+    }
+    .card1 {
+      background: url("https://i.ibb.co/0rv8kGB/21174012-Gd-LMd-Y2-A.jpg") center center no-repeat;
+      background-size: 320px;
+    }
+    .card1:hover {
+      background: url("https://i.ibb.co/0rv8kGB/21174012-Gd-LMd-Y2-A.jpg") left center no-repeat;
+      background-size: 450px;
+    }
+    .card1:hover h2 {
+      left: 0;
+      opacity: 1;
+    }
+    
+    .card1:hover h3 {
+      opacity: 1;
+    }
+    .card1:hover .fa {
+      opacity: 1;
+    }
+    .card2 {
+      background: url("https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg") center center no-repeat;
+      background-size: 300px;
+    }
+    .card2:hover {
+      background: url("https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg") left center no-repeat;
+      background-size: 600px;
+    }
+    .card2:hover h2 {
+      opacity: 1;
+    }
+    
+    .card2:hover .fa {
+      opacity: 1;
+    }
+    h2, h3 {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #fff;
+      color: gray;
+      margin: 10px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .fa {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .icons {
+      position: absolute;
+      fill: #fff;
+      color: #fff;
+      height: 130px;
+      top: 226px;
+      width: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+    
+    
+    /* We’ll set some colors and center everything. */
+    
+    body {
+      background: url("https://i.ibb.co/zZGQ7My/photo-1601662528567-526cd06f6582-ixlib-rb-1-2.jpg") center center repeat;
+      color: #99eeb4;
+      color: pink;
+      color: grey;
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* We set the position to relative so that we can stack a blurred pseudo element on top of the original text */
+    
+    span {
+      position: relative;
+      font-family: "Avenir Next", sans-serif;
+      font-weight: 900;
+      font-size: 88px;
+      position: absolute;
+      top: 3cm;
+      text-transform: uppercase;
+      font-style: italic;
+      letter-spacing: 0.15em;
+      display: inline-block;
+    }
+    
+    /* We create a pseudo element and blur it using the SVG filter. We’ll grab the content from the custom HTML attribute. */
+    
+    span:before {
+      position: absolute;
+      left: 0;
+      top: -50;
+      content: attr(filter-content);
+    
+      filter: url(#motion-blur-filter);
+    }
+    
+    /* We hide the SVG filter element from the DOM as it would take up some space */
+    
+    svg {
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="topnav">
+    <!--<a class="heading" href="#" >News-Wati</a>-->
+    <img class="image" src="https://i.ibb.co/wQpMnwR/logo.png" alt="logo" height = 52.5cm>
+    <a class="items" href="{% url 'aboutus' %}">About Us</a>
+    <a class="items" href="{% url 'show_news' %}">News</a>
+    
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg">
+  
+    <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+    
+      <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+        
+        <!-- We only want horizontal blurring. x: 100, y: 0 -->
+        
+          <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+      </filter>
+  </svg>
+  
+  <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
+  
+  <span filter-content="S">About us</span>
+    
+
+<br>
+
+
+<div class="container">
+  <div class="card card0">
+    <div class="border">
+      <h2>Ansh Chadha <br> CEO co-founder</h2>
+      <div class="icons">
+        <a href="https://www.instagram.com/ansh_chadha_163/" class="fa fa-instagram" aria-hidden="true"></a>
+        <a href="https://www.linkedin.com/in/ansh-chadha-659255b7/" class="fa fa-linkedin" aria-hidden="true"></a>
+        <a href="https://twitter.com/iaintkidding_" class="fa fa-twitter" aria-hidden="true"></a>
+        <a href="https://github.com/GeekyA" class="fa fa-github" aria-hidden="true"></a>
+      </div>
+    </div>
+  </div>
+  <div class="card card1">
+    <div class="border">
+      <h2>Verain Thakur<br>CTO co-founder</h2>
+      <div class="icons">
+        <a href="https://www.instagram.com/verainthakur/" class="fa fa-instagram" aria-hidden="true"></a>
+        <a href="https://www.linkedin.com/in/verain-thakur-675a0920b/" class="fa fa-linkedin" aria-hidden="true"></a>
+        <a href="https://github.com/verain1" class="fa fa-github" aria-hidden="true"></a>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>
