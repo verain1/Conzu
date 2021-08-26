@@ -3,29 +3,34 @@
 <!DOCTYPE <!DOCTYPE html>
 <html lang='en'>
     <head>
-        <title>Showing news</title>        
+        <title>Showing news</title> 
+        <div class="topnav">
+          <!--<a class="heading" href="#" >News-Wati</a>-->
+          <img src="https://i.ibb.co/wQpMnwR/logo.png" alt="logo" height = 52.5cm>
+          <a class="items" href="{% url 'aboutus' %}">About Us</a>
+          <a class="items" href="{% url 'show_news' %}">News</a>
+          
+        </div>       
     </head>
     <link rel='stylesheet' href="{% static 'show_news/style.css' %}" rel="stylesheet">
     <body>
-      <div class="topnav">
-        <!--<a class="heading" href="#" >News-Wati</a>-->
-        <img src="https://i.ibb.co/wQpMnwR/logo.png" alt="logo" height = 52.5cm>
-        <a class="items" href="{% url 'aboutus' %}">About Us</a>
-        <a class="items" href="{% url 'show_news' %}">News</a>
-        
-      </div>
+      
 
         
       {% if data %}
             
             {% for dpoint in data %}
-            
-                    <a href={{dpoint.link}}>{{dpoint.title}}</a>
-                    <h2>{{dpoint.source}}</h2>
-            
+            <div class="row">
+              <div class="column" style="background-color:#aaa;">
+                <a href={{dpoint.link}}>{{dpoint.title}}</a>
+                <h2>{{dpoint.source}}</h2>
+              </div>
+            </div>
             {% endfor %}
             
         {% endif %}      
+
+        
       
     </body>
 </html>
