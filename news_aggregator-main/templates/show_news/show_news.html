@@ -14,25 +14,33 @@
     </head>
     <link rel='stylesheet' href="{% static 'show_news/style.css' %}" rel="stylesheet">
     <body>
-      
 
-      
-      <div class="news_section">
-        {% if data %}
-            
-            {% for dpoint in data %}
-            <div class="row">
-              <div class="column" style="background-color:#aaa;">
-                <a href={{dpoint.link}}>{{dpoint.title}}</a>
-                <h2>{{dpoint.source}}</h2>
+  <div class="box">
+
+    <div class="grid">
+      {% if data %}
+        {% for dpoint in data %}
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="https://i.ibb.co/GH7pCt5/4.png" alt="Oof" />
+              <div class="card-content">
+                      
+                <h1 class="card-header">{{dpoint.title}}</h1>
+                      
+                  <p class="card-text">
+                  <strong>Source: {{dpoint.source}}</strong>
+                  </p>    
+                  
+                  <a href={{dpoint.link}} class=card-btn>Read more</a>
               </div>
             </div>
-            {% endfor %}
-        {% endif %}      
+          </div>  
+        
+      {% endfor %}
+    {% endif %}
+  </div>
 
-      </div>
-
-      
+  </div>
 
         
       
