@@ -66,15 +66,29 @@
 body{
   font-family: latha;
   color: white;
-  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.3), rgba(0,0,0,0)
-  )
-      ,url(https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)no-repeat;
-  background-size: cover;
-  font-family: "Poppins", sans-serif;
+  font-family: Garamond, serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change{
+  0%{
+    background-position: 0 50%;
+}
+
+50%{
+    background-position: 100% 50%;
+}
+
+100%{
+    background-position: 0 50%;
+}
 }
 
 
@@ -91,6 +105,7 @@ html {
   grid-gap: 6rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: start;
+
   padding-top: 2cm;
 }
 
@@ -118,6 +133,9 @@ html {
   height: 20rem;
   object-fit: inherit;
 }
+a{
+  
+}
 
 .card-content {
   padding: 3rem;
@@ -141,7 +159,7 @@ html {
 
 .card-btn {
   display: block;
-  width: 100%;
+  width: 80%;
   padding: 2rem;
   font-size: 1.5rem;
   text-align: center;
@@ -151,7 +169,12 @@ html {
   border-radius: 0.4rem;
   transition: 0.2s;
   cursor: pointer;
+  text-decoration: none;
   letter-spacing: 0.1rem;
+}
+
+.card-btn a{ 
+  text-decoration: none;
 }
 
 .card-btn span {

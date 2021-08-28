@@ -6,7 +6,7 @@
         <title>Showing news</title> 
         <div class="topnav">
           <!--<a class="heading" href="#" >News-Wati</a>-->
-          <img src="https://i.ibb.co/wQpMnwR/logo.png" alt="logo" height = 52.5cm>
+          <img src="https://i.ibb.co/bJRyHCT/logo-final.png" alt="logo" height = 52.5cm width= 130cm>
           <a class="items" href="{% url 'aboutus' %}">About Us</a>
           <a class="items" href="{% url 'show_news' %}">News</a>
           
@@ -25,13 +25,18 @@
               <img class="card-img" src="https://i.ibb.co/GH7pCt5/4.png" alt="Oof" />
               <div class="card-content">
                       
-                <h1 class="card-header">{{dpoint.title}}</h1>
+                <p class="card-header">{{dpoint.title}}</p>
                       
                   <p class="card-text">
                   <strong>Source: {{dpoint.source}}</strong>
                   </p>    
                   
-                  <a href={{dpoint.link}} class=card-btn>Read more</a>
+                  <a style="text-decoration:none;font-size:large" href={{dpoint.link}}>
+                    <input class=card-btn type="button" value="Read more" />
+                 </a>
+                 
+                
+                  
               </div>
             </div>
           </div>  
