@@ -16,8 +16,9 @@
     <body>
       
 
-        
-      {% if data %}
+      
+      <div class="news_section">
+        {% if data %}
             
             {% for dpoint in data %}
             <div class="row">
@@ -27,8 +28,11 @@
               </div>
             </div>
             {% endfor %}
-            
         {% endif %}      
+
+      </div>
+
+      
 
         
       
