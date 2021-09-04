@@ -10,6 +10,7 @@ head {
   font-family: latha;
   color: white;
   font-family: "Poppins", sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: inline;
   justify-content: center;
   align-items: center;
@@ -94,10 +95,11 @@ html {
 }
 
 .card-header {
-  font-size: 3rem;
+  font-size: 20px;
   font-weight: 500;
   color: #0d0d0d;
   margin-bottom: 1.5rem;
+  
 }
 
 .card-text {
@@ -107,6 +109,7 @@ html {
   width: 100%;
   color: #3d3d3d;
   margin-bottom: 2.5rem;
+  font-size: xx-large;
 }
 
 .card-btn {
@@ -161,7 +164,7 @@ html {
   left: 40%;
   background: linear-gradient(10deg,   #7f5a83 0%, #0d324d 74%);
   background-size: 400%;
-  font-size: 100px;
+  font-size: 230px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   letter-spacing: 5px;
