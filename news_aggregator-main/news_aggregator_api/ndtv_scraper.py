@@ -40,7 +40,8 @@ for result in html_content:
         #print(article.text)
         link = article.find('a',href=True)['href']
         title = article.find('a',title=True)['title']
-        data.append({'title':title,'source':'NDTV','link':link,})
+        img_url = article.find('img')['src']
+        data.append({'title':title,'source':'NDTV','link':link,'img':img_url})
 
 df = pd.DataFrame(data)
 print(df)
