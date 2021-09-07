@@ -37,7 +37,8 @@ for kw in trending_keywords:
         title = each.find('h2')
         title = title.text
         link = a_tag['href']
-        data.append({'title':title,'source':'Times Of India','link':news_site_url+'/'+link,})
+        img_url = each.find('img')['src']
+        data.append({'title':title,'source':'Times Of India','link':news_site_url+'/'+link,'img':img_url})
 
 
 
