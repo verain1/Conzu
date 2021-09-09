@@ -37,11 +37,11 @@ for kw in todays_keywords:
 data = []
 for result in html_content:
     for article in result:
-        #print(article.text)
+        print(article.text)
         link = article.find('a',href=True)['href']
         title = article.find('a',title=True)['title']
-        img_url = article.find('img')['src']
-        data.append({'title':title,'source':'NDTV','link':link,'img':img_url})
+       # img_url = article.find('img')['src']
+        data.append({'title':title,'source':'NDTV','link':link,})
 
 df = pd.DataFrame(data)
 print(df)
