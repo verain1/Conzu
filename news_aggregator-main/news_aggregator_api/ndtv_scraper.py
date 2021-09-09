@@ -39,7 +39,7 @@ for kw in todays_keywords:
 data = []
 for result in html_content:
     for article in result:
-        img_url = article.find('span',{'class':'img-gratio'}).find('img')['src']
+        img_url = article.find('span',{'class':'img-gratio'}).find('img',{'class':'img_brd marr10'})['src']
         a_tag = article.find('div',{'class':'src_itm-ttl'}).find('a',title=True,href=True)
         data.append({'title':a_tag['title'],'source':'NDTV','link':a_tag['href'],'img':img_url})
 
