@@ -29,10 +29,12 @@ for kw in todays_keywords:
     soup = BeautifulSoup(response.content,'lxml')
     try:
         results = soup.find('ul',class_='src_lst-ul').find_all('li')[:3]
+        html_content.append(results)
     except:
         print(f"Exception here: {kw}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         
         pass
+    
     
 data = []
 for result in html_content:
