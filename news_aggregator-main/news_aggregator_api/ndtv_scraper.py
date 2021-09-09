@@ -37,7 +37,7 @@ for kw in todays_keywords:
 data = []
 for result in html_content:
     for article in result:
-        print(article.text)
+        print(article)
         link = article.find('a',href=True)['href']
         title = article.find('a',title=True)['title']
        # img_url = article.find('img')['src']
